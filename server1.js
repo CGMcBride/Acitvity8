@@ -3,8 +3,8 @@
 var express = require("express");
 
 var app = express();
-// var PORT = 3000;
 var PORT = process.env.PORT || 3000;
+
 // Data
 // ===========================================================
 var yoda = {
@@ -21,6 +21,12 @@ var darthmaul = {
     forcePoints: 1200
 };
 
+var obiWanKenobi = {
+    name: "Obi Wan Kenobi",
+    role: "Jedi Master",
+    age: 40,
+    forcePoints: 9000
+}
 // Create one more data entry for the character Obi Wan Kenobi.
 // Enter any values you like for the parameters following the same format as the Yoda and Darth Maul character
 //
@@ -43,6 +49,10 @@ app.get("/darthmaul", function (req, res) {
     res.json(darthmaul);
 });
 
+
+app.get("/obiWanKenobi", (req, res) => {
+    res.json(obiWanKenobi);
+});
 // Create a new Express route that leads users to the new Obi Wan Kenobi Data
 // Follow the same format as the Yoda and Darth Maul routes
 //
